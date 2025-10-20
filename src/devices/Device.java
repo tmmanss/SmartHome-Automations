@@ -6,4 +6,5 @@ public interface Device {
     boolean isBroken();
     void repair();
     void showInfo();
+    void breakDown();
 }

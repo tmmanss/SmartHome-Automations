@@ -30,8 +30,25 @@ public abstract class DeviceDecorator implements Device {
         wrappedDevice.repair();
     }
 
+    public Device getWrappedDevice() {
+        return wrappedDevice;
+    }
+
+    public static Device unwrap(Device device) {
+        Device current = device;
+        while (current instanceof DeviceDecorator) {
+            current = ((DeviceDecorator) current).getWrappedDevice();
+        }
+        return current;
+    }
+
     @Override
     public void showInfo() {
         wrappedDevice.showInfo();
+    }
+
+    @Override
+    public void breakDown() {
+        wrappedDevice.breakDown();
     }
 }

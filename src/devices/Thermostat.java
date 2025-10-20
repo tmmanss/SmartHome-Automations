@@ -8,6 +8,10 @@ public class Thermostat extends BaseDevice {
         super(name);
     }
 
+    public double getTemperature() {
+        return temperature;
+    }
+
     public static enum Mode {
         ECO("Eco Mode (Low Power)"),
         COMFORT("Comfort Mode"),

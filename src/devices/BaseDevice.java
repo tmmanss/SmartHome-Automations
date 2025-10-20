@@ -36,4 +36,15 @@ public abstract class BaseDevice implements Device {
             System.out.println("ℹ️ " + name + " is already working fine.");
         }
     }
+
+    @Override
+    public void breakDown() {
+        if (broken) {
+            System.out.println("⚠️ " + name + " is already broken.");
+            return;
+        }
+        broken = true;
+        status = DeviceStatus.BROKEN;
+        System.out.println("⚠️ " + name + " broke down!");
+    }
 }
